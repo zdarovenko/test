@@ -1,0 +1,10 @@
+<div class="left-nav">
+  <input type="text"
+         placeholder="Введите название маркера"
+         [(ngModel)]="placeMarkName"
+         (keyup)="savePlaceMark($event)">
+  <app-drag-n-drop-table [collection]="base.markers"
+                         (dragNDropEnd)="base.updateMap()"
+                         (remove)="base.removeMarker($event)">
+  </app-drag-n-drop-table>
+</div>

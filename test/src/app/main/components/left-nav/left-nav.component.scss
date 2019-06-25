@@ -1,0 +1,17 @@
+.left-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 0 8px;
+    font-size: 16px;
+  }
+}
+
+.marker {
+  position: relative;
+  user-select: none;
+}

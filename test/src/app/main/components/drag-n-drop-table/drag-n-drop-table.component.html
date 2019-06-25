@@ -1,0 +1,10 @@
+<div id="table">
+
+  <div *ngFor="let item of collection; let i = index" class="cell" [attr.item-index]="i">
+    <div class="marker" draggable="true" [attr.item-index]="i">
+      <span class="marker-span" [attr.item-index]="i">{{item.name}}</span>
+      <span class="delete" (click)="removeMarker(item)">удалить</span>
+    </div>
+  </div>
+
+</div>

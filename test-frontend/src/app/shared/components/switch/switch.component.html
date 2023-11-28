@@ -1,0 +1,5 @@
+<div class="switch-wrapper">
+  <div *ngFor="let option of options" (click)="selectOption(option.value)" class="switch-option" [class.active]="option.value === value">
+    {{ option.name }}
+  </div>
+</div>

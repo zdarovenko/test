@@ -1,0 +1,22 @@
+@font-face {
+  src: url("assets/fonts/Roboto-Light.ttf") format("ttf");
+
+  font-family: "Roboto";
+  font-weight: 100;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  margin: .5rem;
+  border-radius: 4px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}

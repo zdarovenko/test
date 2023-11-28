@@ -1,0 +1,13 @@
+<div class="city-wrapper" [ngSwitch]="displayMode">
+  <app-switch [options]="displayModeOptions" [(value)]="displayMode"></app-switch>
+  <app-city-cards *ngSwitchCase="'cards'"
+                  [cities]="cities">
+  </app-city-cards>
+
+  <app-table *ngSwitchCase="'table'"
+             [config]="tableConfig"
+             [rows]="cities"
+             [defaultOrderingColumn]="'name'"
+             (orderChange)="applyFilters.next($event)">
+  </app-table>
+</div>

@@ -1,0 +1,37 @@
+<div class="table-container">
+  <table class="city-table card">
+    <thead>
+    <tr>
+      <th *ngFor="let column of config"
+          [ngStyle]="{ minWidth: (column.minWidth || DEFAULT_COLUMN_WIDTH) + 'px' }"
+          [class.clickable]="column.orderingAvailable"
+          (click)="column.orderingAvailable && sortBy(column.field)">
+        <span>
+          {{ column.title }}
+          <ng-container *ngIf="ordering.field === column.field" [ngSwitch]="ordering.order">
+            <ng-container *ngSwitchCase="'ASC'"> ↓</ng-container>
+            <ng-container *ngSwitchCase="'DESC'"> ↑</ng-container>
+          </ng-container>
+        </span>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let column of config" [ngSwitch]="column.transformValue">
+        <ng-container *ngSwitchCase="'million'">
+          {{ row[column.field] | million }}
+        </ng-container>
+        <ng-container *ngSwitchCase="'join'">
+          <ng-container *ngFor="let item of row[column.field]; last as last">
+            {{ item }}<ng-container *ngIf="!last">, </ng-container>
+          </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          {{ row[column.field] }}
+        </ng-container>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

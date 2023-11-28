@@ -1,0 +1,24 @@
+@import 'src/assets/styles/colors';
+
+.switch-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.switch-option {
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 4px;
+  margin: 0 .25rem;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: $primary-color-light;
+  }
+
+  &.active {
+    background-color: $primary-color;
+    color: white;
+  }
+}

@@ -1,0 +1,51 @@
+<div class="card-container">
+  <div class="card city-card"
+       [class.expanded]="expandedIndex === i"
+       *ngFor="let city of cities; index as i"
+       (click)="expandedIndex = expandedIndex === i ? -1 : i">
+    <div class="card-title">
+      {{ city.name }}
+    </div>
+    <div class="row">
+      <span>Name native:</span>
+      <span>{{ city.name_native }}</span>
+    </div>
+    <div class="row">
+      <span>Country:</span>
+      <span>{{ city.country }}</span>
+    </div>
+    <div class="row">
+      <span>Continent:</span>
+      <span>{{ city.continent }}</span>
+    </div>
+    <div class="row">
+      <span>Latitude:</span>
+      <span>{{ city.latitude }}</span>
+    </div>
+    <div class="row">
+      <span>Longitude:</span>
+      <span>{{ city.longitude }}</span>
+    </div>
+    <div class="row">
+      <span>Population:</span>
+      <span>{{ city.population }}</span>
+    </div>
+    <div class="row">
+      <span>Founded in:</span>
+      <span>{{ city.founded }}</span>
+    </div>
+    <div class="row">
+      <span>Landmarks:</span>
+      <span class="text-end">
+        <ng-container *ngFor="let landmark of city.landmarks; last as last">
+          {{ landmark }}<ng-container *ngIf="!last"><br></ng-container>
+        </ng-container>
+      </span>
+    </div>
+    <div class="overlay">
+      <span>
+        CLICK ME!
+      </span>
+    </div>
+  </div>
+</div>

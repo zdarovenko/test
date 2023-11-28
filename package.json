@@ -1,0 +1,15 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "Test project.",
+  "scripts": {
+    "build:back": "docker-compose build test-backend",
+    "build:front": "docker-compose build test-frontend",
+    "start:db": "docker-compose up test-db",
+    "start:backend": "docker-compose up test-backend --renew-anon-volumes",
+    "start:frontend": "docker-compose up test-frontend --renew-anon-volumes",
+    "clean": "docker-compose down -v"
+  },
+  "author": "",
+  "license": "ISC"
+}

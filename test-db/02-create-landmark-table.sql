@@ -1,0 +1,7 @@
+USE cities;
+CREATE TABLE landmark (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  cityId INT NOT NULL,
+  FOREIGN KEY (cityId) REFERENCES city (id) ON DELETE CASCADE
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

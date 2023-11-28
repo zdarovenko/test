@@ -1,0 +1,35 @@
+@import 'src/assets/styles/colors';
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.city-table {
+  border-collapse: collapse;
+  overflow: hidden;
+
+  thead tr {
+    background-color: $warning-color;
+    color: white;
+  }
+
+  tr:not(:last-of-type) {
+    border-bottom: 1px solid #DDD;
+  }
+
+  th, td {
+    text-align: start;
+    padding: .5rem;
+    box-sizing: border-box;
+  }
+
+  th {
+    height: 3rem;
+    user-select: none;
+  }
+
+  th.clickable {
+    cursor: pointer;
+  }
+}
